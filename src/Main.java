@@ -1,12 +1,13 @@
 import java.util.ArrayList;
 import java.util.Collection;
+import java.util.Set;
 import java.util.TreeSet;
 
 public class Main {
     public static void main(String[] args) {
 
         // Using Comparable for class Window, should sort by area
-        TreeSet<Window> windowsSetForComparable = new TreeSet();
+        Set<Window> windowsSetForComparable = new TreeSet();
 
         windowsSetForComparable.add(new Window(1, 1));
         windowsSetForComparable.add(new Window(5, 5));
@@ -21,7 +22,7 @@ public class Main {
 
         //Using Comparator for class Window, should sort by height
         WindowComparatorByHeight windowComparatorByHeight = new WindowComparatorByHeight();
-        TreeSet<Window> windowsSetForComparatorByHeight = new TreeSet<>(windowComparatorByHeight);
+        Set<Window> windowsSetForComparatorByHeight = new TreeSet<>(windowComparatorByHeight);
 
         windowsSetForComparatorByHeight.add(new Window(100, 1));
         windowsSetForComparatorByHeight.add(new Window(500, 2));
@@ -36,7 +37,7 @@ public class Main {
 
         //Using Comparator for class Window, should sort by width
         WindowComparatorByWidth windowComparatorByWidth = new WindowComparatorByWidth();
-        TreeSet<Window> windowsSetForComparatorByWidth = new TreeSet<>(windowComparatorByWidth);
+        Set<Window> windowsSetForComparatorByWidth = new TreeSet<>(windowComparatorByWidth);
 
         windowsSetForComparatorByWidth.add(new Window(100, 1));
         windowsSetForComparatorByWidth.add(new Window(500, 2));
@@ -51,7 +52,7 @@ public class Main {
 
         //Using Comparator for class House, short sort by number of windows
         HouseComparator houseComparator = new HouseComparator();
-        TreeSet <House> housesSetForComparator = new TreeSet<>(houseComparator);
+        Set<House> housesSetForComparator = new TreeSet<>(houseComparator);
         ArrayList<Window> windows = new ArrayList<>(windowsSetForComparatorByHeight);   // copy windows for TreeSet to Arraylist for constructor
 
         housesSetForComparator.add(new House(7, windows));
